@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="style1.css" media="screen and (device-height:900px)" rel="stylesheet" type="text/css" />
+<link href="style2.css" media="screen and (device-height:768px) and (device-width:1366px)" rel="stylesheet" type="text/css" />
+<title>Memory game</title>
+<style type="text/css">
+@media screen and (max-width: 960px) 
+{
+   @import url('style1.css');
+   @import url('style2.css');
+}
+    #content{
+        font-size: 32px;
+        text-align: center;
+        width: 38%;
+        position: absolute;
+        right: 5%;
+        backface-visibility: hidden;
+    }
+    #top10{
+        width: 55%;
+        position: absolute;
+        left: 5%;
+        backface-visibility: hidden;
+    }
+</style>
+<script type="text/javascript">
+var score;
+var mem_arr = ['!','!','@','@','#','#','$','$','%','%','^','^','&','&','*','*','?','?','~','~','+','+','-','-'];
+var mem_val = [];
+var mem_tile_id = [];
+var tiles_flipped = 0;
+Array.prototype.mem_tile_shuffle = function(){
+	var i = this.length, j, temp;
+	while(--i > 0){
+		j = Math.floor(Math.random()*(i+1));
+		temp = this[j];
+		this[j] = this[i];
+		this[i] = temp;	
+	}
+}
+window.onload=function gettop10(){
+    var http;
+    if(window.XMLHttpRequest)
+        http=new XMLHttpRequest()
+    else
+        http=new ActiveXObject("Microsoft.XMLHTTP");
+    http.onreadystatechange=function()
+  {
+  if (http.readyState==4 && http.status==200)
+    {
+    document.getElementById("top10").innerHTML=http.responseText;
+    }
+  }
+    http.open("GET","http://sastraresult.host56.com/mem_game/top10.php",true);
+http.send();
+}
+function submitScores(name,score){
+    var http;
+    if(window.XMLHttpRequest)
+        http=new XMLHttpRequest()
+    else
+        http=new ActiveXObject("Microsoft.XMLHTTP");
+    http.open("POST","http://sastraresult.host56.com/mem_game/update.php",true);
+    http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    http.send("name="+name+"&score="+score);
+}
+function newBoard(){
+	tiles_flipped = 0;
+	var output = '';
+	mem_arr.mem_tile_shuffle();
+	for(var i=0;i<mem_arr.length;i++){
+		output += '<div id="tile_'+i+'" onclick="memFlipTile(this,\''+mem_arr[i]+'\')"></div>';	
+	}
+	document.getElementById('memory_board').innerHTML = output;
+}
+function memFlipTile(tile,val){
+		if(tile.innerHTML == "" && mem_val.length<2){
+			tile.style.background = '#FFF';
+			tile.innerHTML = val;
+			if(mem_val.length==0){
+				mem_val.push(val);
+				mem_tile_id.push(tile.id);	
+			}else if(mem_val.length==1){
+				mem_val.push(val);
+				mem_tile_id.push(tile.id);
+				if(mem_val[0]==mem_val[1]){
+					tiles_flipped += 2;
+					//clear both arrays
+					mem_val = [];
+					mem_tile_id = [];
+					
+				} else {
+					function flipBack(){
+						var tile_1 = document.getElementById(mem_tile_id[0]);
+						var tile_2 = document.getElementById(mem_tile_id[1]);
+						tile_1.style.background = 'url(images/Winking-Smiley.png) no-repeat';
+						tile_1.style.backgroundSize = 'cover';
+						tile_1.innerHTML = "";
+						tile_2.style.background = 'url(images/Winking-Smiley.png) no-repeat';
+						tile_2.style.backgroundSize = 'cover';
+						tile_2.innerHTML = "";
+						//clear arrays
+						mem_val = [];
+						mem_tile_id = [];
+					}
+					setTimeout(flipBack,700);
+				}
+			}
+		}
+}
+function countSecs(secs,el){
+	document.getElementById('desc').style.display = "block";
+	var game = document.getElementById('memory_board').style.display = "block";
+	var e = document.getElementById(el);
+	e.innerHTML = secs;
+	if(secs<1){
+		e.style.display = "none";
+		Alert.render("Time's Up....","Sorry, You've LOST!!!!");
+		return;
+	}
+	if(tiles_flipped==mem_arr.length){
+		document.getElementById('min').style.display = "none";
+		var res = "You've finished in "+score+" seconds!!!";
+        var name=prompt("Enter Your Name?");
+        submitScores(name,score);
+		Alert.render("Hurray...You've WON!!!",res);
+		return;
+	}
+	score = 80-secs;
+	secs--;
+	var timer = setTimeout('countSecs('+secs+',"'+el+'")',1000);
+}
+function start(secs,el){
+    document.getElementById('top10').style.visiblity ='hidden';
+    document.getElementById('top10').style.display ='none';
+    document.getElementById('content').style.visiblity ='hidden';
+    document.getElementById('content').style.display ='none';
+    document.getElementById('tit').style.visiblity ='hidden';
+    document.getElementById('tit').style.display ='none';
+    countSecs(secs,el);
+}
+function customAlert(){
+	this.render = function(msgh,msgb){
+		var winW = window.innerWidth;
+		var winH = window.innerHeight;
+		var dover = document.getElementById('dialogoverlay');
+		var dialog = document.getElementById('dialog');
+		dover.style.display = "block";
+		dover.style.height = winH+"px";
+		dialog.style.left = (winW/2) - (550 * 0.5)+"px";
+		dialog.style.top = "200px";
+		dialog.style.display = "block";
+		document.getElementById('dialoghead').innerHTML = msgh;
+		document.getElementById('dialogbody').innerHTML = msgb;
+		document.getElementById('dialogfoot').innerHTML = '<a href=javascript:document.location.reload();>TRY AGAIN</a>';
+	}
+}
+var Alert = new customAlert();
+</script>
+</head>
+
+<body>
+<center><h1 id="tit">MEMORY GAME</h1></center>
+    <br/>
+    <p id="content">
+        If this is what,<br/>
+        " My Worst Enemy is My MEMORY "<br/>
+        You Feel...!<br/>
+        <br/><br/>
+        Then Let's Fight him out!
+    </p>
+<div id=top10></div>
+<img src="images/desc.png" id="desc" />
+<div id="dialogoverlay"></div>
+<div id="dialog">
+	<div>
+    	<div id="dialoghead"></div>
+        <div id="dialogbody"></div>
+        <div id="dialogfoot"></div>
+    </div>
+</div>
+<div id="memory_board"></div>
+<div id="min"></div>
+<input type="button" id="btn" onClick="start(60,'min');" />
+<script type="text/javascript">newBoard();</script>
+</body>
+</html>
