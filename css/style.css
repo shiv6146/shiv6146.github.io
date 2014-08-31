@@ -2,6 +2,7 @@ body{
 	background-size: 100%;
 	background-color: #36454F;
 	overflow: hidden;
+	font-family: 'Open Sans', sans-serif;
 }
 #main-container{
 	position: relative;
@@ -148,7 +149,6 @@ body{
 	width: 200px;
 	text-align: center;
 	font-weight: bold;
-	font-family: "Calibri";
 	z-index: 2;
 	font-size: 15px;
 	line-height: 18px;
@@ -190,7 +190,6 @@ body{
 	width: 200px;
 	text-align: center;
 	font-weight: bold;
-	font-family: "Calibri";
 	z-index: 2;
 	font-size: 15px;
 	line-height: 18px;
@@ -232,7 +231,6 @@ body{
 	width: 200px;
 	text-align: center;
 	font-weight: bold;
-	font-family: "Calibri";
 	z-index: 2;
 	font-size: 15px;
 	line-height: 18px;
@@ -274,7 +272,6 @@ body{
 	width: 200px;
 	text-align: center;
 	font-weight: bold;
-	font-family: "Calibri";
 	z-index: 2;
 	font-size: 15px;
 	line-height: 18px;
