@@ -1,0 +1,297 @@
+body{
+	background-size: 100%;
+	background-color: #36454F;
+	overflow: hidden;
+}
+#main-container{
+	position: relative;
+	margin: 0px auto;
+	top: 80px;
+}
+#chuma{
+	display: none;
+	height: 200px;
+	width: 200px;
+	background: white;
+}
+#overlay{
+	position: fixed;
+	display: none;
+	opacity: 0.8;
+	top: 0px;
+	left: 0px;
+	background: white;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+}
+#box{
+	display: none;
+	position: fixed;
+	background: black;
+	top: 100px;
+	border-radius: 7px;
+	left: 400px;
+	width: 550px;
+	z-index: 10;
+}
+#box > div{
+	background: white;
+	margin: 8px;
+}
+#box > div > #box-head{
+	background: #666;
+	font-size: 20px;
+	padding: 10px;
+	color: white;
+}
+#box > div > #box-body{
+	background: #333;
+	padding: 20px;
+	color: #FFF;
+	font-size: 15px;
+}
+#box > div > #box-foot{
+	background: #666;
+	padding: 10px;
+	text-align: right;
+	text-decoration: none;
+}
+.circle-container {
+  position: relative;
+  /* [1] */
+  width: 20em;
+  height: 20em;
+  padding: 0;
+  border-radius: 50%;
+  list-style: none;
+  /* [2] */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  /* [3] */
+  margin: 5em auto 0;
+  border: solid 5px #F3E5AB;
+}
+.circle-container > * {
+  /* [4] */
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6em;
+  height: 6em;
+  margin: -3em;
+}
+.circle-container > *:nth-of-type(1) {
+  -moz-transform: rotate(0deg) translate(10em) rotate(-0deg);
+  -ms-transform: rotate(0deg) translate(10em) rotate(-0deg);
+  -webkit-transform: rotate(0deg) translate(10em) rotate(-0deg);
+  transform: rotate(0deg) translate(10em) rotate(-0deg);
+}
+.circle-container > *:nth-of-type(2) {
+  -moz-transform: rotate(90deg) translate(10em) rotate(-90deg);
+  -ms-transform: rotate(90deg) translate(10em) rotate(-90deg);
+  -webkit-transform: rotate(90deg) translate(10em) rotate(-90deg);
+  transform: rotate(90deg) translate(10em) rotate(-90deg);
+}
+.circle-container > *:nth-of-type(3) {
+  -moz-transform: rotate(180deg) translate(10em) rotate(-180deg);
+  -ms-transform: rotate(180deg) translate(10em) rotate(-180deg);
+  -webkit-transform: rotate(180deg) translate(10em) rotate(-180deg);
+  transform: rotate(180deg) translate(10em) rotate(-180deg);
+}
+.circle-container > *:nth-of-type(4) {
+  -moz-transform: rotate(270deg) translate(10em) rotate(-270deg);
+  -ms-transform: rotate(270deg) translate(10em) rotate(-270deg);
+  -webkit-transform: rotate(270deg) translate(10em) rotate(-270deg);
+  transform: rotate(270deg) translate(10em) rotate(-270deg);
+}
+.circle-container a {
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #F3E5AB;
+}
+.circle-container img {
+  display: block;
+  width: 100%;
+  border-radius: 50%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.circle-container img:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+/*TOOLTIP*/
+.tooltip {
+	position: relative;
+}
+/*TOP*/
+#top:before, #top:after {
+	position: absolute;
+	transition: All 0.5s ease;
+	-webkit-transition: All 0.5s ease;
+	-moz-transition: All 0.5s ease;
+	-o-transition: All 0.5s ease;
+	margin-left: -100px;
+	left: 50%;
+	bottom: 300%;
+	display: block;
+	color: #000;
+	opacity: 0;
+}
+#top:before {
+	content: "Keep calm and click on...! You could know something about me:)";
+	border: solid 1px #0088cc;
+	background: #FFF;
+	width: 200px;
+	text-align: center;
+	font-weight: bold;
+	font-family: "Calibri";
+	z-index: 2;
+	font-size: 15px;
+	line-height: 18px;
+	padding: 5px;
+}
+#top:after {
+	content: '\25c6';
+	margin-left: 0;
+	margin-top: 10px;
+	width: 15px;
+	height: 15px;
+	z-index: 1;
+	line-height: 28px;
+	color: #0088cc;
+	font-size: 20px;
+}
+#top:hover:before, #top:hover:after {
+	bottom: 120%;
+	opacity: 1;
+}
+/*LEFT*/
+#left:before, #left:after {
+	position: absolute;
+	transition: All 0.5s ease;
+	-webkit-transition: All 0.5s ease;
+	-moz-transition: All 0.5s ease;
+	-o-transition: All 0.5s ease;
+	margin-left: -100px;
+	left: -120%;
+	top: 10%;
+	display: block;
+	color: #000;
+	opacity: 0;
+}
+#left:before {
+	content: "May be you could also find these interesting, since I find them to be...!";
+	border: solid 1px #0088cc;
+	background: #FFF;
+	width: 200px;
+	text-align: center;
+	font-weight: bold;
+	font-family: "Calibri";
+	z-index: 2;
+	font-size: 15px;
+	line-height: 18px;
+	padding: 5px;
+}
+#left:after {
+	content: '\25c6';
+	margin-left: 103px;
+	margin-top: 20px;
+	width: 15px;
+	height: 15px;
+	z-index: 1;
+	line-height: 28px;
+	color: #0088cc;
+	font-size: 20px;
+}
+#left:hover:before, #left:hover:after {
+	opacity: 1;
+	left: -140%;
+}
+/*RIGHT*/
+#right:before, #right:after {
+	position: absolute;
+	transition: All 0.5s ease;
+	-webkit-transition: All 0.5s ease;
+	-moz-transition: All 0.5s ease;
+	-o-transition: All 0.5s ease;
+	margin-left: 250px;
+	left: -120%;
+	top: 25%;
+	display: block;
+	color: #000;
+	opacity: 0;
+}
+#right:before {
+	content: "Do what you love, and love what you do...!";
+	border: solid 1px #0088cc;
+	background: #FFF;
+	width: 200px;
+	text-align: center;
+	font-weight: bold;
+	font-family: "Calibri";
+	z-index: 2;
+	font-size: 15px;
+	line-height: 18px;
+	padding: 5px;
+}
+#right:after {
+	content: '\25c6';
+	margin-left: 243px;
+	margin-top: 10px;
+	width: 15px;
+	height: 15px;
+	z-index: 1;
+	line-height: 28px;
+	color: #0088cc;
+	font-size: 20px;
+}
+#right:hover:before, #right:hover:after {
+	opacity: 1;
+	left: -140%;
+}
+/*BOTTOM*/
+#bottom:before, #bottom:after {
+	position: absolute;
+	transition: All 0.5s ease;
+	-webkit-transition: All 0.5s ease;
+	-moz-transition: All 0.5s ease;
+	-o-transition: All 0.5s ease;
+	margin-left: -100px;
+	left: 50%;
+	top: 275%;
+	display: block;
+	color: #000;
+	opacity: 0;
+}
+#bottom:before {
+	content: "Interested to ping me...!";
+	border: solid 1px #0088cc;
+	background: #FFF;
+	width: 200px;
+	text-align: center;
+	font-weight: bold;
+	font-family: "Calibri";
+	z-index: 2;
+	font-size: 15px;
+	line-height: 18px;
+	padding: 5px;
+}
+#bottom:after {
+	content: '\25c6';
+	margin-left: 0;
+	margin-top: -13px;
+	width: 15px;
+	height: 15px;
+	z-index: 1;
+	line-height: 28px;
+	color: #0088cc;
+	font-size: 20px;
+}
+#bottom:hover:before, #bottom:hover:after {
+	top: 120%;
+	opacity: 1;
+}
