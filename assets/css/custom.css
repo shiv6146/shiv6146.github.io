@@ -7,6 +7,7 @@ body{
 	font-family : Arial, sans-serif;
 	width: 100%;
 	padding-top: 150px;
+	background-color: #FFFACD;
 }
 
 a{
@@ -20,7 +21,7 @@ a{
 
 .navbar{
 	padding: 45px 0;
-	background-color:#fff;
+	background-color: #FFFACD;
 	transition:padding 0.4s;
 }
 
@@ -43,9 +44,9 @@ a{
 /* Brand name */
 
 .brandStyle{
-	color: #487b83 !important;
-	font-family : Cabin, sans-serif;
-	font-size: 24px;
+	color: #FF851B !important;
+	font-family : Josefin Slab, serif;
+	font-size: 48px;
 }
 
 /* Menu */
@@ -62,13 +63,38 @@ a{
 ------------------------------------*/
 
 .headpicture{
-	background:url(../images/header.jpg);
+	background:url(../images/header10.jpg);
 	background-size:cover;
 	background-repeat:no-repeat;
 	width: 100%;
 	height: 600px;
+	filter: blur(5px);
+  	-webkit-filter: blur(5px);
+  	z-index: 1;
+  	display: block;
 }
 
+#myFaceContainer{
+	position: absolute;
+	z-index: 2;
+	top: 35%;
+	left: 25%;
+}
+
+#me{
+	box-shadow: 0px 0px 15px #FFFACD;
+}
+
+#intro{
+	font-family: 'Poiret One', cursive;
+	text-rendering: optimizeLegibility;
+	text-align: center;
+	position: absolute;
+	top: 100%;
+	color: #fff;
+	line-height: 1.5;
+	max-width: 700px;
+}
 
 /*-----------------------------------
 		Text
