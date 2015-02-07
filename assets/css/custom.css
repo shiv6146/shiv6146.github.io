@@ -11,7 +11,7 @@ body{
 }
 
 a{
-	color :#8d736c !important;
+	color :#F4A460 !important;
 }
 
 
@@ -52,33 +52,46 @@ a{
 /* Menu */
 
 .menustyle{
-	text-transform: uppercase;
-	font-size: 12px;
-	font-weight: bold;
+	font-size: 25px;
 }
 
+.goto {
+	background-color: #FFFACD !important;
+    width: 100%;
+    height: 100%;
+    z-index:0; 
+    -webkit-transform: translateZ( 0 );
+    transform: translateZ( 0 );
+    -webkit-transition: -webkit-transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+}
 
 /*-----------------------------------
 	Main Picture 
 ------------------------------------*/
 
 .headpicture{
-	background:url(../images/header10.jpg);
+	background:url(../images/header.jpg);
 	background-size:cover;
 	background-repeat:no-repeat;
 	width: 100%;
 	height: 600px;
-	filter: blur(5px);
-  	-webkit-filter: blur(5px);
+	filter: blur(10px);
+  	-webkit-filter: blur(10px);
   	z-index: 1;
   	display: block;
 }
 
 #myFaceContainer{
-	position: absolute;
 	z-index: 2;
-	top: 35%;
-	left: 25%;
+	position: absolute;
+	top: 30%;
+	left: 30%;
+	max-height: 50%;
+	max-width: 50%;
 }
 
 #me{
@@ -89,11 +102,14 @@ a{
 	font-family: 'Poiret One', cursive;
 	text-rendering: optimizeLegibility;
 	text-align: center;
-	position: absolute;
-	top: 100%;
+	z-index: 5;
 	color: #fff;
 	line-height: 1.5;
 	max-width: 700px;
+}
+
+#face-alone{
+	top: -15px;
 }
 
 /*-----------------------------------
@@ -103,11 +119,10 @@ a{
 /* Titles */
 
 h1{
-	color: #5a5b5b;
-	font-size:24px;
-	font-weight: bold;
+	color: #FF851B;
+	font-size:48px;
 	margin-top: 150px;
-	font-family : Cabin, sans-serif;
+	font-family : 'Josefin Slab', sans-serif;
 }
 
 /* Paragraphs */
@@ -115,7 +130,7 @@ h1{
 .textStyle{
 	color: #989999;
 	font-size: 18px;
-	text-align: justify;
+	text-align: center;
 	line-height: 1.5;
 	max-width: 700px;
 	margin: 80px auto 0 auto;
@@ -271,14 +286,183 @@ h1{
 
 }
 
+/*---------------------
+	SCROLLING
+------------------------*/
+
+a[ id= "aboutme" ]:target ~ #main article.goto {
+	-webkit-transform: translateY( 0px);
+    transform: translateY( 0px );
+}
+
+a[ id= "projects" ]:target ~ #main article.goto {
+	-webkit-transform: translateY( -500px);
+    transform: translateY( -500px );
+}
+
+a[ id= "contact" ]:target ~ #main article.goto {
+	-webkit-transform: translateY( -1000px);
+    transform: translateY( -1000px );
+}
 /* On bigger screens */ 
 
-@media (min-width: 993px) {
-	
-	/* Sharing buttons */
+/*@media (min-width: 993px) {
 	
 	.responsiveAlign {
 		float: right;
 	}
 }
 
+@media screen and (max-height: 568px) {
+        h2 {
+    font-size:10px;
+    }
+    #myFaceContainer{
+    	top: 25%;
+    	left: -10%;
+    }
+    #intro{
+    	left: 10%;
+    }
+}
+
+@media screen and (max-height: 667px) {
+        h2 {
+    font-size:10px;
+    }
+    #myFaceContainer{
+    	top: 21%;
+    	left: -3%;
+    }
+    #intro{
+    	left: 10%;
+    }
+}
+
+@media screen and (max-height: 736px) {
+        h2 {
+    font-size:10px;
+    }
+    #myFaceContainer{
+    	top: 11%;
+    	left: -3%;
+    }
+    #intro{
+    	left: 10%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+        h2 {
+    font-size:10px;
+    }
+    #myFaceContainer{
+    	left: -10%;
+    }
+    #intro{
+    	left: 10%;
+    }
+}
+ 
+@media screen and (max-width: 568px) {
+        h2 {
+    font-size:15px;
+    font-weight: bolder;
+    }
+}
+
+@media (min-width: 1920px) {
+        h2 {
+    font-size:35px;
+    font-weight: bolder;
+    }
+    #myFaceContainer{
+    	top: 20%;
+    	left: 35%;
+    }
+}
+
+@media (min-width: 2560px) {
+        h2 {
+    font-size:35px;
+    font-weight: bolder;
+    }
+    #myFaceContainer{
+    	top: 20%;
+    	left: 40%;
+    }
+}*/
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+h2 {
+    font-size:12px;
+    }
+    #myFaceContainer{
+    	left: 30%;
+    	top: 35%;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+h2 {
+    font-size:12px;
+    }
+    #myFaceContainer{
+    	left: 30%;
+    	top: 25%;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}

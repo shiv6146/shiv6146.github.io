@@ -4,123 +4,126 @@
 		<title>Shiva shankar | Portfolio</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Josefin+Slab:300' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"/>
-		<link rel="stylesheet" type="text/css" href="assets/css/custom.css"/>		
+		<link rel="stylesheet" type="text/css" href="assets/css/custom.css"/>
+		<link href="assets/cool-share/plugin.css" media="all" rel="stylesheet"/>		
 	</head>
 
 	<body>
 		
 		<!--  Navigation Bar -->
-		
-		<nav class="navbar navbar-default navbar-fixed-top noBorder" role="navigation">
-			<div class="container">
-				
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand brandStyle" href="#">Shiva shankar</a>
-				</div>
-				
-				<div class="collapse navbar-collapse noPadding"	id="myNavbar">
-					<div class="navbar-right menustyle">
-						<ul class="nav navbar-nav">
-							<li><a href="#"><p>home</p></a></li>
-							<li><a href="#"><p>services</p></a></li>
-							<li><a href="#"><p>contact us</p></a></li>
-						</ul>
+		<header class="my-nav">
+			<nav class="navbar navbar-default navbar-fixed-top noBorder" role="navigation">
+				<div class="container">
+					
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand brandStyle" href="#">Shiva shankar</a>
 					</div>
+					
+					<div class="collapse navbar-collapse noPadding"	id="myNavbar">
+						<div class="navbar-right menustyle">
+							<ul class="nav navbar-nav">
+								<li><a href="#aboutme"><i class="fa fa-user"></i></a></li>
+								<li><a href="#projects"><i class="fa fa-github"></i></a></li>
+								<li><a href="#contact"><i class="fa fa-twitter"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					
 				</div>
-				
-			</div>
-		</nav>
+			</nav>
+		</header>
 
 		<!-- Main Page -->
-		
-		<div class="container-fluid noPadding">
+		<section class="main">
 
-			<div class="container-fluid">
-				<div class="container-fluid headpicture"></div>
-				<div class="row vertical-center-row" id="myFaceContainer">
-			        <div class="col-lg-12">
-			            <div class="row ">
-			                <div class="col-xs-4 col-xs-offset-4">
-			                	<img src="assets/images/rsz_me.jpg" class="img-responsive img-circle" id="me">
-			                </div>
-			            </div>
-			        </div>
-			        <h2 id="intro">Hey, there! I am Shiva shankar. A Python enthusiast by nature, and an aspiring developer.</h2>
-			    </div>
-			</div>
-			
-			<div class="container text-center">
+			<div class="container-fluid noPadding">
+
+				<div class="container-fluid">
+					<div class="container-fluid headpicture"></div>
+
+					<div class="row vertical-center-row" id="myFaceContainer">
+				        <div class="col-lg-12" id="face-alone">
+				            <div class="row ">
+				                <div class="col-xs-4 col-xs-offset-4">
+				                	<img src="assets/images/me.jpg" class="img-responsive img-circle" id="me">
+				                </div>
+				            </div>
+				        </div>
+				        <div class="text-center" id="intro">
+				        <h2>Hey, there! I am Shiva shankar...</h2>
+				        <h2>A Python enthusiast and an aspiring web developer...</h2>
+				        </div>
+				    </div>
+				</div>
 				
-				<h1>Bootstrap Responsive Template</h1>
+				<article class="goto">
+					<div class="container text-center" id="aboutme">
+						
+						<h1>I, me aur mein...!</h1>
 
-				<p class="textStyle">
-					Hey there! This is a <a href="http://tutorialzine.com/2014/04/creative-company-bootstrap-template/">responsive template made by Tutorialzine</a>. It uses the bootstrap framework from twitter. Try resizing your browser window, or open the page on your smartphone. We hope you find our little template useful! <br><br>Feel free to share it with your friends, or, if possible, include a back link to our site if you use it. Thanks!
-				</p>
+						<p class="textStyle">
+							Technically, am running short of thoughts on myself...<br>
+							Will be updated asap...!
+						</p>
+
+					</div>
+				</article>
 				
-				<h1>Latest Projects</h1>
+				<article class="goto">
+					<h1 class="text-center" id="projects">Got my hands dirty with..!</h1>
+					<div class="container textstyle">
+						<div class="row text-center latestProjects">
+							
+							<div class="col-md-4 col-sm-6">
+								<a href="https://github.com/shiv6146/DS-and-Algos-in-Python">
+									<img class="imgsize" src="assets/images/1.jpg" alt="Python algos">
+								</a>
+								<p>Python, implementation of DS and algos, the OOP way.<a href="https://github.com/shiv6146/DS-and-Algos-in-Python">View in Github →</a></p>
+							</div>
+							
+							<div class="col-md-4 col-sm-6">
+								<a href="https://github.com/shiv6146/linkedin-crawler" >
+									<img class="imgsize" src="assets/images/2.png" alt="Linkedin crawler">
+								</a>
+								<p>A light-weight crawler for Linkedin, using Python.<a href="https://github.com/shiv6146/linkedin-crawler">View in Github →</a></p>
+							</div>
+
+							<div class="col-md-4 col-sm-12">
+								<a href="https://github.com/shiv6146/TwitterStream" >
+									<img class="imgsize" src="assets/images/3.jpg" alt="Tweets parser">
+								</a>
+								<p>A light-weight Twitter-stream parser, using Python-Twitter API.<a href="https://github.com/shiv6146/TwitterStream">learn more →</a></p>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- Footer -->
+				<article class="goto">
+					<div class="container footer" id="contact">
+						<div class="col-xs-12 col-md-8 noPadding">
+							<p id="footerLogoText">Built in <i class="fa fa-heart"></i> with <i class="fa fa-html5"></i> and <i class="fa fa-css3"></i></p>
+						</div>
+						<span class="socialShare"></span>
+					</div>
+				</article>
 
 			</div>
-			
-			<div class="container textstyle">
-				<div class="row text-center latestProjects">
-					
-					<div class="col-md-4 col-sm-6">
-						<a href="http://dribbble.com/shots/1210363-Weather-App-Washing-Machine-iOS7" >
-							<img class="imgsize" src="assets/images/1.jpg" alt="weather app">
-						</a>
-						<p>Weather app design <a href="http://dribbble.com/shots/1210363-Weather-App-Washing-Machine-iOS7">learn more →</a></p>
-					</div>
-					
-					<div class="col-md-4 col-sm-6">
-						<a href="http://dribbble.com/shots/202313-British-Tea-Cup" >
-							<img class="imgsize" src="assets/images/2.jpg" alt="british tea cup">
-						</a>
-						<p>3D modeling and rendering <a href="http://dribbble.com/shots/202313-British-Tea-Cup">learn more →</a></p>
-					</div>
-
-					<div class="col-md-4 col-sm-12">
-						<a href="http://dribbble.com/shots/606745-In-app-Visual-Data" >
-							<img class="imgsize" src="assets/images/3.jpg" alt="app visualization data">
-						</a>
-						<p>Mobile web application <a href="http://dribbble.com/shots/606745-In-app-Visual-Data">learn more →</a></p>
-					</div>
-				</div>
-			</div>
-
-			<!-- Footer -->
-			
-			<div class="container footer">
-				<div class="col-xs-12 col-md-8 noPadding">
-					<p id="footerLogoText">Creative Company © 2014</p>
-				</div>
-				<div class="col-xs-12 col-md-4 noPadding">
-					<div class="socialButtons responsiveAlign">
-						<a href="#" class="noPadding">
-							<img src="assets/images/twitter.svg" alt="image1">
-						</a>
-						<a href="#" class="noPadding">
-							<img src="assets/images/facebook.svg" alt="image1">
-						</a>
-						<a href="#" class="noPadding">
-							<img src="assets/images/behance.svg" alt="image1">
-						</a>
-					</div>
-				</div>
-			</div>
-
-		</div>
+		</section>
 
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/myscript.js"></script>
+		<script src="assets/cool-share/plugin.js"></script>
 	</body>
 </html>

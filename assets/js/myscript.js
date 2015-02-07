@@ -1,4 +1,4 @@
-$(function(){
+$(document).ready(function() {
 
 	var nav = $('.navbar'),
 		doc = $(document),
@@ -17,4 +17,14 @@ $(function(){
 	// Trigger the scroll listener on page load
 	
 	win.scroll();
+
+
+	var options = {
+
+    facebook : true,
+    linkedin : true,
+    github : true,
+};
+
+$('.socialShare').shareButtons(options);
 });
