@@ -134,8 +134,8 @@
 			e.preventDefault();
 
 			var url = this.href,
-				w = 500,
-				h = 400,
+				w = screen.width,
+				h = screen.height,
 				left = (screen.width / 2) - (w / 2),
 				top = (screen.height / 2) - (h / 2);
 
